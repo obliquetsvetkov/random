@@ -36,7 +36,7 @@ def fetch_stats(handle):
             for subsensor in j.Sensors:
                 parse_sensor(subsensor)
 
-
+# VERY hacky. 
 def parse_sensor(sensor):
         if sensor.Value is not None:
             if type(sensor).__module__ == 'CPUThermometer.Hardware':
@@ -47,7 +47,7 @@ def parse_sensor(sensor):
                 hardwaretypes = openhardwaremonitor_hwtypes
             else:
                 return
-
+# Check sensor list at this point; make sure you're indexing the one you actually want.
             if sensor.SensorType == sensortypes.index('Temperature'):
                 if sensor.Index == 0:
                     print("%i" % sensor.Value)
@@ -61,5 +61,5 @@ if __name__ == "__main__":
     #print(HardwareHandle)
     while True:
         fetch_stats(HardwareHandle)
-        time.sleep(5)
+        time.sleep(5) #this is too long.
 
