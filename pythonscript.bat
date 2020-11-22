@@ -1,0 +1,1 @@
+start /min C:\Users\Home\AppData\Local\Programs\Python\Python38-32\pythonw.exe C:\openhardwaremonitor-v0.9.5\OpenHardwareMonitor\python_temp_test.py
